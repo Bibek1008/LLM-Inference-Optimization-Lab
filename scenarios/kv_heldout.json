@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "kv",
+  "name": "kv-heldout-holes-and-cancellation",
+  "version": "1",
+  "seed": 808,
+  "description": "Held-out page pressure with cancellations and lengths around page boundaries.",
+  "parameters": {
+    "capacity_tokens": 32,
+    "page_size": 4
+  },
+  "search_space": {},
+  "requests": [
+    {"id": "v0", "arrival": 0, "prompt_tokens": 5, "decode_tokens": 11},
+    {"id": "v1", "arrival": 0, "prompt_tokens": 2, "decode_tokens": 6},
+    {"id": "v2", "arrival": 1, "prompt_tokens": 7, "decode_tokens": 8, "cancel_at": 7},
+    {"id": "v3", "arrival": 2, "prompt_tokens": 3, "decode_tokens": 5},
+    {"id": "v4", "arrival": 4, "prompt_tokens": 8, "decode_tokens": 8},
+    {"id": "v5", "arrival": 6, "prompt_tokens": 1, "decode_tokens": 3, "cancel_at": 10},
+    {"id": "v6", "arrival": 8, "prompt_tokens": 6, "decode_tokens": 9},
+    {"id": "v7", "arrival": 10, "prompt_tokens": 4, "decode_tokens": 4}
+  ]
+}

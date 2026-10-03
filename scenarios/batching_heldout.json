@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "batching",
+  "name": "batching-heldout-long-tail",
+  "version": "1",
+  "seed": 707,
+  "description": "Held-out odd lengths and late short requests during long prompt work.",
+  "parameters": {
+    "slots": 3,
+    "batch_size": 3,
+    "token_budget": 5,
+    "prefill_chunk": 3
+  },
+  "search_space": {},
+  "requests": [
+    {"id": "w0", "arrival": 0, "prompt_tokens": 13, "decode_tokens": 2, "class": "batch"},
+    {"id": "w1", "arrival": 0, "prompt_tokens": 3, "decode_tokens": 9, "class": "interactive"},
+    {"id": "w2", "arrival": 1, "prompt_tokens": 7, "decode_tokens": 1, "class": "interactive"},
+    {"id": "w3", "arrival": 2, "prompt_tokens": 11, "decode_tokens": 6, "class": "batch"},
+    {"id": "w4", "arrival": 3, "prompt_tokens": 1, "decode_tokens": 3, "class": "interactive"},
+    {"id": "w5", "arrival": 5, "prompt_tokens": 9, "decode_tokens": 4, "class": "batch"},
+    {"id": "w6", "arrival": 6, "prompt_tokens": 2, "decode_tokens": 7, "class": "interactive"},
+    {"id": "w7", "arrival": 9, "prompt_tokens": 15, "decode_tokens": 2, "class": "batch"},
+    {"id": "w8", "arrival": 10, "prompt_tokens": 4, "decode_tokens": 5, "class": "interactive"}
+  ]
+}

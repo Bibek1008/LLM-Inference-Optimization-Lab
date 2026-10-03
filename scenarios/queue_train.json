@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "queue",
+  "name": "queue-train-burst",
+  "version": "1",
+  "seed": 101,
+  "description": "A small burst with interactive requests mixed into longer batch work.",
+  "parameters": {
+    "servers": 2,
+    "fairness_wait_bound": 30
+  },
+  "search_space": {
+    "policy": ["fifo", "shortest", "interactive_first"],
+    "servers": [2]
+  },
+  "requests": [
+    {"id": "q0", "arrival": 0, "work": 8, "class": "batch", "deadline": 30},
+    {"id": "q1", "arrival": 0, "work": 2, "class": "interactive", "deadline": 8},
+    {"id": "q2", "arrival": 1, "work": 3, "class": "interactive", "deadline": 10},
+    {"id": "q3", "arrival": 1, "work": 6, "class": "batch", "deadline": 24},
+    {"id": "q4", "arrival": 2, "work": 1, "class": "interactive", "deadline": 8},
+    {"id": "q5", "arrival": 4, "work": 4, "class": "batch", "deadline": 20},
+    {"id": "q6", "arrival": 5, "work": 2, "class": "interactive", "deadline": 15},
+    {"id": "q7", "arrival": 8, "work": 5, "class": "batch", "deadline": 32}
+  ]
+}

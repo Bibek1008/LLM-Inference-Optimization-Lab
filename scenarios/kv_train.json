@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "kv",
+  "name": "kv-train-fragmentation",
+  "version": "1",
+  "seed": 202,
+  "description": "Requests grow in a small page pool; lazy growth trades stalls for admission capacity.",
+  "parameters": {
+    "capacity_tokens": 24,
+    "page_size": 4
+  },
+  "search_space": {
+    "policy": ["contiguous", "paged"],
+    "page_size": [2, 4, 6, 8]
+  },
+  "requests": [
+    {"id": "k0", "arrival": 0, "prompt_tokens": 4, "decode_tokens": 8},
+    {"id": "k1", "arrival": 0, "prompt_tokens": 3, "decode_tokens": 5},
+    {"id": "k2", "arrival": 1, "prompt_tokens": 6, "decode_tokens": 7},
+    {"id": "k3", "arrival": 2, "prompt_tokens": 2, "decode_tokens": 4},
+    {"id": "k4", "arrival": 3, "prompt_tokens": 5, "decode_tokens": 3, "cancel_at": 8}
+  ]
+}

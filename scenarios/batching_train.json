@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "batching",
+  "name": "batching-train-ragged",
+  "version": "1",
+  "seed": 303,
+  "description": "Ragged prompts and decode horizons expose static padding and refill trade-offs.",
+  "parameters": {
+    "slots": 2,
+    "batch_size": 2,
+    "token_budget": 4,
+    "prefill_chunk": 2
+  },
+  "search_space": {
+    "policy": ["static", "dynamic", "continuous"],
+    "batch_size": [1, 2],
+    "prefill_chunk": [1, 2, 4]
+  },
+  "requests": [
+    {"id": "b0", "arrival": 0, "prompt_tokens": 8, "decode_tokens": 3, "class": "batch"},
+    {"id": "b1", "arrival": 0, "prompt_tokens": 2, "decode_tokens": 8, "class": "interactive"},
+    {"id": "b2", "arrival": 1, "prompt_tokens": 5, "decode_tokens": 2, "class": "interactive"},
+    {"id": "b3", "arrival": 2, "prompt_tokens": 1, "decode_tokens": 5, "class": "batch"},
+    {"id": "b4", "arrival": 4, "prompt_tokens": 7, "decode_tokens": 1, "class": "interactive"},
+    {"id": "b5", "arrival": 5, "prompt_tokens": 3, "decode_tokens": 4, "class": "batch"},
+    {"id": "b6", "arrival": 8, "prompt_tokens": 6, "decode_tokens": 2, "class": "interactive"}
+  ]
+}
